@@ -1,3 +1,5 @@
-systemd/**
-git/**
-environment.d/**
+*
+!.gitignore
+!flake.*
+!home-manager
+!modules
