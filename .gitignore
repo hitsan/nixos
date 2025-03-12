@@ -4,4 +4,4 @@
 !.gitignore
 !flake.*
 !home-manager/*
-!modules/*
+!nixos/*
