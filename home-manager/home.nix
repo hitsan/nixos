@@ -67,7 +67,7 @@
   #  /etc/profiles/per-user/hitsan/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
@@ -79,5 +79,14 @@
     extraConfig = {
       init.defaultBranch = "main";
     };
+  };
+  programs = {
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
+
+    bash.enable = true;
   };
 }
