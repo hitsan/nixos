@@ -15,19 +15,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "spica"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  # networking.networkmanager.enable = true;
-  # networking = {
-  #   interfaces.eno1 = {
-  #     wakeOnLan.enable = true;
-  #   };
-  # };
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
@@ -105,46 +92,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
     ethtool
-  #  wget
   ];
-
-  #programs.nix-ld.enable = true;
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-  # services.openssh = {
-  #   enable = true;
-  #   ports = [ 22 ];
-  #   settings = {
-  #     PasswordAuthentication = false;
-  #     AllowUsers = [ "hitsan" ];
-  #     UseDns = true;
-  #     X11Forwarding = true;
-  #     PermitRootLogin = "prohibit-password";
-  #   };
-  # };
-
-  # systemd.sleep.extraConfig = ''
-  #   AllowSuspend=no
-  #   AllowHibernation=no
-  #   AllowHybridSleep=no
-  #   AllowSuspendThenHibernate=no
-  # '';
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
