@@ -22,12 +22,12 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
-  networking = {
-    interfaces.eno1 = {
-      wakeOnLan.enable = true;
-    };
-  };
+  # networking.networkmanager.enable = true;
+  # networking = {
+  #   interfaces.eno1 = {
+  #     wakeOnLan.enable = true;
+  #   };
+  # };
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
@@ -121,17 +121,17 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = false;
-      AllowUsers = [ "hitsan" ];
-      UseDns = true;
-      X11Forwarding = true;
-      PermitRootLogin = "prohibit-password";
-    };
-  };
+  # services.openssh = {
+  #   enable = true;
+  #   ports = [ 22 ];
+  #   settings = {
+  #     PasswordAuthentication = false;
+  #     AllowUsers = [ "hitsan" ];
+  #     UseDns = true;
+  #     X11Forwarding = true;
+  #     PermitRootLogin = "prohibit-password";
+  #   };
+  # };
 
   systemd.sleep.extraConfig = ''
     AllowSuspend=no
