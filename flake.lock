@@ -1,12 +1,33 @@
 {
   "nodes": {
+    "nix-ld": {
+      "inputs": {
+        "nixpkgs": [
+          "spica",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1742204505,
+        "narHash": "sha256-sHBzuG9K/VrvOrcLd9GwoCLaQZDVedi/00YmFfdKq/A=",
+        "owner": "Mic92",
+        "repo": "nix-ld",
+        "rev": "bc1ecb8ca83507c764a3909f02f1acf53c033585",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "nix-ld",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1741379970,
-        "narHash": "sha256-Wh7esNh7G24qYleLvgOSY/7HlDUzWaL/n4qzlBePpiw=",
+        "lastModified": 1742422364,
+        "narHash": "sha256-mNqIplmEohk5jRkqYqG19GA8MbQ/D4gQSK0Mu4LvfRQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "36fd87baa9083f34f7f5027900b62ee6d09b1f2f",
+        "rev": "a84ebe20c6bc2ecbcfb000a50776219f48d134cc",
         "type": "github"
       },
       "original": {
@@ -16,9 +37,42 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1742578646,
+        "narHash": "sha256-GiQ40ndXRnmmbDZvuv762vS+gew1uDpFwOfgJ8tLiEs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "94c4dbe77c0740ebba36c173672ca15a7926c993",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "spica": "spica"
+      }
+    },
+    "spica": {
+      "inputs": {
+        "nix-ld": "nix-ld",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-WVL7vb+riB3kJPnVopUeycNq+ynJ2SUXwX+C9T97y1k=",
+        "path": "./hosts/spica",
+        "type": "path"
+      },
+      "original": {
+        "path": "./hosts/spica",
+        "type": "path"
       }
     }
   },
