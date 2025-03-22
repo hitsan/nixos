@@ -13,6 +13,8 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
+        ./network.nix
+        ./systemd.nix
         nix-ld.nixosModules.nix-ld
 
         { programs.nix-ld.dev.enable = true; }
