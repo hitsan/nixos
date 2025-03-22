@@ -5,6 +5,10 @@
     interfaces.eno1 = {
       wakeOnLan.enable = true;
     };
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 22 ];
+    };
   };
   services.openssh = {
     enable = true;
