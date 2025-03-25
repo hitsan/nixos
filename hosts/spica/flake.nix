@@ -15,6 +15,7 @@
         ./configuration.nix
         ./network.nix
         ./systemd.nix
+        ./ollama.nix
         nix-ld.nixosModules.nix-ld
 
         { programs.nix-ld.dev.enable = true; }
