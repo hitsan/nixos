@@ -7,6 +7,8 @@
   };
 
   outputs = { self, nixpkgs, spica }: {
-    nixosConfigurations = spica.outputs.nixosConfigurations;
+    nixosConfigurations = {
+      spica = spica.outputs.nixosConfigurations.spica;
+    };
   };
 }
