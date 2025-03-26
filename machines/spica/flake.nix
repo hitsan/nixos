@@ -7,12 +7,12 @@
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nix-ld, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, nix-ld, ... }@inputs: {
     env = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        ./network.nix
+        ./networking.nix
         ./systemd.nix
         ./ollama.nix
         nix-ld.nixosModules.nix-ld
