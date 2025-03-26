@@ -66,7 +66,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-tQKU6AD6BygIX0QMggHtVA3Iw3yZ4w4aSexjxhPhXVg=",
+        "narHash": "sha256-YsrdF4bB+z/kbYRyCFF8VMrQ5IX2jK8N/cxXWWq0X3M=",
         "path": "./machines/spica",
         "type": "path"
       },
