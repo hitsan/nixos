@@ -67,11 +67,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-zWrioHdu37MINlv5bqWwXb9iRMROHuSyLTSxkkfj32I=",
-        "path": "./hosts/spica",
+        "path": "./machines/spica",
         "type": "path"
       },
       "original": {
-        "path": "./hosts/spica",
+        "path": "./machines/spica",
         "type": "path"
       }
     }
