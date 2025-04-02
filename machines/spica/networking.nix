@@ -7,7 +7,7 @@
     };
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 11434 ];
+      allowedTCPPorts = [ 22 ];
     };
   };
   services.openssh = {
