@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    spica.url = "path:./machines/spica";
+    spica.url = "path:./hosts/spica";
   };
 
   outputs = { self, nixpkgs, spica }: {

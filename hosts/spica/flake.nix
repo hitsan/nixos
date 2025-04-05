@@ -16,7 +16,7 @@
         ./systemd.nix
         nix-ld.nixosModules.nix-ld
         { programs.nix-ld.dev.enable = true; }
-        ./ollama.nix
+        ./modules/ollama.nix
       ];
     };
   };
