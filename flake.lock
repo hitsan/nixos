@@ -3,7 +3,6 @@
     "nix-ld": {
       "inputs": {
         "nixpkgs": [
-          "spica",
           "nixpkgs"
         ]
       },
@@ -37,42 +36,10 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1743689281,
-        "narHash": "sha256-y7Hg5lwWhEOgflEHRfzSH96BOt26LaYfrYWzZ+VoVdg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "2bfc080955153be0be56724be6fa5477b4eefabb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
-        "spica": "spica"
-      }
-    },
-    "spica": {
-      "inputs": {
         "nix-ld": "nix-ld",
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-90hJBiiL0Ud84oWRha6ENnU6MewWADH1awvYtj7oQdk=",
-        "path": "./hosts/spica",
-        "type": "path"
-      },
-      "original": {
-        "path": "./hosts/spica",
-        "type": "path"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
