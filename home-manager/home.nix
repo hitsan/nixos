@@ -79,6 +79,7 @@
 
     shellAliases = {
       ll = "ls -l";
+      vi = "nvim";
       update = "sudo nixos-rebuild switch --flake ~/dotfiles#spica";
       home = "home-manager switch --flake ~/dotfiles/home-manager#hitsan";
     };
