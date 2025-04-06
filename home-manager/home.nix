@@ -85,7 +85,7 @@
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "thefuck" "zsh-completions"];
+      plugins = [ "git" ];
       theme = "robbyrussell";
     };
 
