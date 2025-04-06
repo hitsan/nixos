@@ -1,9 +1,10 @@
+{ user, home }:
 { config, pkgs, ... }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "hitsan";
-  home.homeDirectory = "/home/hitsan";
+  home.username = user;
+  home.homeDirectory = home;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -74,7 +75,7 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
-    userName = "hitsan";
+    userName = user;
     userEmail = "soledewa2828@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
@@ -97,4 +98,7 @@
     agents = [ "ssh" ];
     keys = [ "id_ed25519" ];
   };
+  imports = [
+    ../shell/zsh.nix
+  ];
 }

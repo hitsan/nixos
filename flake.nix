@@ -17,14 +17,16 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    user = "hitsan";
+    home = "/home/${user}";
   in
   {
     nixosConfigurations = {
       spica = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/spica/configuration.nix
-          ./hosts/spica/networking.nix
+          (import ./hosts/spica/configuration.nix { inherit user home; })
+          (import ./hosts/spica/networking.nix { inherit user; })
           ./hosts/spica/systemd.nix
           nix-ld.nixosModules.nix-ld
           { programs.nix-ld.dev.enable = true; }
@@ -33,12 +35,11 @@
       };
     };
 
-    homeConfigurations."hitsan" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
       modules = [
-        ./home-manager/home.nix
-        ./shell/zsh.nix
+        ( import ./home-manager/home.nix { inherit user home; })
       ];
     };
   };

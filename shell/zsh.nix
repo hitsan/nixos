@@ -7,7 +7,7 @@
 
     shellAliases = {
       ll = "ls -l";
-      spica_switch = "sudo nixos-rebuild switch --flake ~/dotfiles#spica";
+      nix_switch = "sudo nixos-rebuild switch --flake ~/dotfiles#spica";
       home = "home-manager switch --flake ~/dotfiles#hitsan";
     };
     oh-my-zsh = {
