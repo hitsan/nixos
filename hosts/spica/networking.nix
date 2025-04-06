@@ -1,3 +1,4 @@
+{ user }:
 { config, pkgs, ... }:
 {
   networking = {
@@ -15,7 +16,7 @@
     ports = [ 22 ];
     settings = {
       PasswordAuthentication = false;
-      AllowUsers = [ "hitsan" ];
+      AllowUsers = [ user ];
       UseDns = true;
       X11Forwarding = true;
       PermitRootLogin = "prohibit-password";
