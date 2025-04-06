@@ -72,6 +72,24 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ll = "ls -l";
+      update = "sudo nixos-rebuild switch --flake ~/dotfiles#spica";
+      home = "home-manager switch --flake ~/dotfiles/home-manager#hitsan";
+    };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "thefuck" ];
+      theme = "robbyrussell";
+    };
+
+    dotDir = ".config/zsh";
+  };
   programs.git = {
     enable = true;
     userName = "hitsan";
@@ -86,8 +104,6 @@
       enableBashIntegration = true;
       nix-direnv.enable = true;
     };
-
-    bash.enable = true;
   };
   programs = {
     neovim = {
