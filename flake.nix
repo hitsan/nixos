@@ -27,19 +27,19 @@
     nixosConfigurations = {
       spica = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/spica ];
         specialArgs = {
           inherit user home nix-ld modules_path;
         };
+
+        modules = [ ./hosts/spica ];
       };
     };
 
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
+      extraSpecialArgs = { inherit user home; };
 
-      modules = [
-        ( import ./home-manager/home.nix { inherit user home; })
-      ];
+      modules = [ ./home-manager/home.nix ];
     };
   };
 }
