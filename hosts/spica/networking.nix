@@ -21,5 +21,9 @@
       X11Forwarding = true;
       PermitRootLogin = "prohibit-password";
     };
+    extraConfig = ''
+      ClientAliveCountMax 3
+      ClientAliveInterval 180
+    '';
   };
 }
