@@ -19,28 +19,27 @@
     pkgs = nixpkgs.legacyPackages.${system};
     user = "hitsan";
     home = "/home/${user}";
+    root = builtins.toString ./.;
+    modules_path = "${root}/modules";
+    hosts_path = "${root}/hosts";
   in
   {
     nixosConfigurations = {
       spica = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-          (import ./hosts/spica/configuration.nix { inherit user home; })
-          (import ./hosts/spica/networking.nix { inherit user; })
-          ./hosts/spica/systemd.nix
-          nix-ld.nixosModules.nix-ld
-          { programs.nix-ld.dev.enable = true; }
-          ./modules/ollama.nix
-        ];
+        specialArgs = {
+          inherit user home nix-ld modules_path;
+        };
+
+        modules = [ ./hosts/spica ];
       };
     };
 
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
+      extraSpecialArgs = { inherit user home; };
 
-      modules = [
-        ( import ./home-manager/home.nix { inherit user home; })
-      ];
+      modules = [ ./home-manager/home.nix ];
     };
   };
 }
