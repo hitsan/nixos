@@ -33,6 +33,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    pkgs.zellij
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -96,6 +97,10 @@
     enable = true;
     agents = [ "ssh" ];
     keys = [ "id_ed25519" ];
+  };
+  programs.zellij = {
+    # enable = true;
+    enableZshIntegration = true;
   };
   imports = [
     ../shell/zsh.nix
