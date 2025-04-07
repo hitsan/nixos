@@ -5,5 +5,6 @@
     ./networking.nix
     ./suspend.nix
     "${modules_path}/ollama.nix"
+    "${modules_path}/nix-ld.nix"
   ];
 }

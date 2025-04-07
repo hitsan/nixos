@@ -27,13 +27,9 @@
     nixosConfigurations = {
       spica = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-          ./hosts/spica
-          nix-ld.nixosModules.nix-ld
-          { programs.nix-ld.dev.enable = true; }
-        ];
+        modules = [ ./hosts/spica ];
         specialArgs = {
-          inherit user home modules_path;
+          inherit user home nix-ld modules_path;
         };
       };
     };
