@@ -27,7 +27,7 @@
         modules = [
           (import ./hosts/spica/configuration.nix { inherit user home; })
           (import ./hosts/spica/networking.nix { inherit user; })
-          ./hosts/spica/systemd.nix
+          ./hosts/spica/suspend.nix
           nix-ld.nixosModules.nix-ld
           { programs.nix-ld.dev.enable = true; }
           ./modules/ollama.nix
