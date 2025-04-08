@@ -11,11 +11,6 @@
       home = "home-manager switch --flake ~/dotfiles#hitsan";
       stop = "sudo systemctl suspend";
     };
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "robbyrussell";
-    };
 
     dotDir = ".config/zsh";
   };
