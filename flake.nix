@@ -22,6 +22,7 @@
     root = builtins.toString ./.;
     modules_path = "${root}/modules";
     hosts_path = "${root}/hosts";
+    shell = "zsh";
   in
   {
     nixosConfigurations = {
@@ -37,7 +38,7 @@
 
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = { inherit user home; };
+      extraSpecialArgs = { inherit user home shell; };
 
       modules = [ ./home-manager/home.nix ];
     };

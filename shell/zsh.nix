@@ -10,9 +10,6 @@
       switch = "sudo nixos-rebuild switch --flake ~/dotfiles#spica";
       home = "home-manager switch --flake ~/dotfiles#hitsan";
       stop = "sudo systemctl suspend";
-      z = "zellij";
-      zka = "zellij ka -y";
-      zda = "zellij da -y";
     };
     oh-my-zsh = {
       enable = true;
