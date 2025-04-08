@@ -21,8 +21,8 @@
       PermitRootLogin = "prohibit-password";
     };
     extraConfig = ''
-      ClientAliveCountMax 3
-      ClientAliveInterval 180
+      ClientAliveCountMax 10
+      ClientAliveInterval 300
     '';
   };
 }
