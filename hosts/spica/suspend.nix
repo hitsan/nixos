@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
   services.logind.extraConfig = ''
-    IdleAction=suspend
-    IdleActionSec=10800
+    IdleAction=ignore
+    IdleActionSec=0
     HandleLidSwitch=ignore
     HandleLidSwitchExternalPower=ignore
     HandleLidSwitchDocked=ignore
