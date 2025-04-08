@@ -98,10 +98,6 @@
     agents = [ "ssh" ];
     keys = [ "id_ed25519" ];
   };
-  programs.zellij = {
-    # enable = true;
-    enableZshIntegration = true;
-  };
   imports = [
     ../shell/${shell}.nix
     ./zellij.nix
