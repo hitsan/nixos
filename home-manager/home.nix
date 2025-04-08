@@ -88,11 +88,6 @@
       nix-direnv.enable = true;
     };
   };
-  programs = {
-    neovim = {
-      enable = true;
-    };
-  };
   programs.keychain = {
     enable = true;
     agents = [ "ssh" ];
@@ -101,5 +96,6 @@
   imports = [
     ../shell/${shell}.nix
     ./zellij.nix
+    ./editor.nix
   ];
 }
