@@ -11,9 +11,9 @@
       home = "home-manager switch --flake ~/dotfiles#hitsan";
       stop = "sudo systemctl suspend";
     };
-    initExtra = "
-      PROMPT=\"%F{green}$%f \";
-    ";
+    initExtra = ''
+      PS1='%F{green}$%f '
+    '';
 
     dotDir = ".config/zsh";
   };
