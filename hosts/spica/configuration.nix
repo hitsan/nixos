@@ -85,7 +85,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-  programs.zsh.enable = true;  
+  programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

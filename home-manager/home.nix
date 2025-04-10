@@ -14,7 +14,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   imports = [
-    ./${shell}.nix
+    ./shell.nix
     ./zellij.nix
     ./editor.nix
     ./dev.nix
