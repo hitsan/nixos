@@ -33,6 +33,14 @@
     LC_TIME = "ja_JP.UTF-8";
   };
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+    ];
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -83,8 +91,10 @@
   # nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  programs = {
+    firefox.enable = true;
+    chromium.enable = true;
+  };
   programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run:

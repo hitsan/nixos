@@ -13,6 +13,8 @@
       };
     };
   };
+
+  # home.file.".config/zellij/config.kdl".source = ./config.kdl;
   programs.${shell} = {
     shellAliases = {
       z = "zellij";
@@ -22,7 +24,15 @@
     };
     initExtra = ''
       function precmd() {
-        print -Pn "\e]2;%~\a"
+        local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+        local host=$(hostname)
+        local title=" @$host"
+        if [[ -n "$branch" ]]; then
+          title+=" [ $branch]"
+        fi
+        title+=" %~"
+        print -Pn "\e]2;$title\a"
+        # print -Pn "\e]2;%~\a"
       }
     '';
   };
