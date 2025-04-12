@@ -13,6 +13,7 @@
     };
     initExtra = ''
       PS1='%F{green}$%f '
+      setopt no_beep
     '';
 
     dotDir = ".config/zsh";
