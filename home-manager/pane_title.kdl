@@ -1,3 +1,0 @@
-layout name="pane_title" {
-  pane name="cwd {cwd}  {git_branch} {nix_shell} {virtual_env}" 
-}
