@@ -272,17 +272,17 @@ plugins {
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
 }
-layout name="default" {
-  pane title = "{cwd} {git_branch} {virtualenv}"
-  status-bar {
-    enabled = true
-    items = [
-      { type = "current_directory" }
-      { type = "git_branch" }
-      { type = "virtualenv" }
-    ]
-  }
-}
+// layout name="default" {
+//   pane title = "{cwd} {git_branch} {virtualenv}"
+//   status-bar {
+//     enabled = true
+//     items = [
+//       { type = "current_directory" }
+//       { type = "git_branch" }
+//       { type = "virtualenv" }
+//     ]
+//   }
+// }
 // Use a simplified UI without special fonts (arrow glyphs)
 // Options:
 //   - true
