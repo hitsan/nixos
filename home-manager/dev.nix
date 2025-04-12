@@ -14,6 +14,9 @@
         init.defaultBranch = "main";
       };
     };
+    lazygit = {
+      enable = true;
+    };
     keychain = {
         enable = true;
         agents = [ "ssh" ];
