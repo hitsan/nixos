@@ -11,9 +11,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    xremap.url = "github:xremap/nix-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-ld }:
+  outputs = { self, nixpkgs, home-manager, nix-ld, xremap }:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -29,7 +30,7 @@
       spica = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          inherit user home nix-ld modules_path;
+          inherit user home nix-ld modules_path xremap;
         };
 
         modules = [ ./hosts/spica ];

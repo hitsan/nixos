@@ -1,4 +1,4 @@
-{ config, pkgs, lib, user, home, modules_path, ... }:
+{ modules_path, ... }:
 {
   imports = [
     ./configuration.nix
@@ -8,3 +8,4 @@
     "${modules_path}/nix-ld.nix"
   ];
 }
+
