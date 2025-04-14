@@ -4,7 +4,10 @@
   home.homeDirectory = home;
   home.stateVersion = "24.05";
 
-  home.packages = [ ];
+  home.packages = with pkgs; [
+    bat
+    eza
+  ];
   home.file = { };
 
   home.sessionVariables = {

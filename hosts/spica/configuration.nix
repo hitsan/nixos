@@ -73,10 +73,10 @@
     config = {
       modmap = [
         {
-           name = "Capslock to ctrl";
-           remap = {
-	     CapsLock = "Ctrl_L";
-	   };
+          name = "Capslock to ctrl";
+          remap = {
+      	    CapsLock = "Ctrl_L";
+	        };
          }
       ];
     };
@@ -126,11 +126,9 @@
  
   # nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
 
-  programs = {
-    firefox.enable = true;
-    chromium.enable = true;
-  };
+  programs.firefox.enable = true;
   programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run:
@@ -138,6 +136,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
+    google-chrome
     ethtool
   ];
 

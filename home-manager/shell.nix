@@ -18,4 +18,8 @@
 
     dotDir = ".config/zsh";
   };
+  programs = {
+    fzf.enable = true;
+    zoxide.enable = true;
+  };
 }
