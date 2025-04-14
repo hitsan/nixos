@@ -1,4 +1,4 @@
-{ user, ... }:
+{ shell, user, ... }:
 {
   programs = {
     direnv = {
@@ -22,5 +22,8 @@
         agents = [ "ssh" ];
         keys = [ "id_ed25519" ];
     };
+  };
+  programs.${shell}.shellAliases = {
+    laz = "lazygit";
   };
 }
