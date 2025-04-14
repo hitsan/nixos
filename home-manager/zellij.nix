@@ -17,7 +17,7 @@
   # home.file.".config/zellij/config.kdl".source = ./config.kdl;
   programs.${shell} = {
     shellAliases = {
-      z = "zellij";
+      zel = "zellij";
       zls = "zellij ls";
       zka = "zellij ka -y";
       zda = "zellij da -y";
