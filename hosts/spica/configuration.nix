@@ -127,10 +127,7 @@
   # nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  programs = {
-    firefox.enable = true;
-    chromium.enable = true;
-  };
+  programs.firefox.enable = true;
   programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run:
