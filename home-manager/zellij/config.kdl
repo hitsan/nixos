@@ -8,6 +8,7 @@ keybinds clear-defaults=true {
     }
     normal {
         bind "Ctrl a" { "FocusNextPane"; }
+        bind "Ctrl y" { "GoToNextTab"; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
