@@ -21,6 +21,7 @@
     user = "hitsan";
     home = "/home/${user}";
     root = builtins.toString ./.;
+    home_path = "${root}/home-manager";
     modules_path = "${root}/modules";
     hosts_path = "${root}/hosts";
     shell = "zsh";
@@ -39,7 +40,7 @@
 
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = { inherit user home shell; };
+      extraSpecialArgs = { inherit user home shell home_path; };
 
       modules = [ ./home-manager/home.nix ];
     };

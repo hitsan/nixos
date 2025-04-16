@@ -1,4 +1,4 @@
-{ config, pkgs, lib, user, home, shell, ... }:
+{ config, pkgs, lib, user, home, shell, home_path, ... }:
 {
   home.username = user;
   home.homeDirectory = home;
@@ -18,7 +18,7 @@
   programs.home-manager.enable = true;
   imports = [
     ./shell.nix
-    ./zellij.nix
+    ./zellij/zellij.nix
     ./editor.nix
     ./dev.nix
   ];

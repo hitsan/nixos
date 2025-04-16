@@ -1,4 +1,4 @@
-{ config, pkgs, shell, ... }:
+{ config, pkgs, shell, home_path, ... }:
 {
   home.packages = [
     pkgs.zellij
@@ -32,8 +32,8 @@
         fi
         title+=" %~"
         print -Pn "\e]2;$title\a"
-        # print -Pn "\e]2;%~\a"
       }
     '';
   };
+  home.file.".config/zellij/config.kdl".source = home_path + "/zellij/config.kdl";
 }
