@@ -2,9 +2,6 @@
 {
   programs.neovim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [
-      lazy-nvim
-    ];
     extraConfig = ''
       set number
       set cursorline
