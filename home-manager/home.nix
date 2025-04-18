@@ -19,7 +19,7 @@
   imports = [
     ./shell.nix
     ./zellij/zellij.nix
-    ./editor.nix
+    ./editor/editor.nix
     ./dev.nix
   ];
 }
