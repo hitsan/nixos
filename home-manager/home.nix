@@ -20,6 +20,6 @@
     ./shell.nix
     ./zellij/zellij.nix
     ./editor/editor.nix
-    ./dev.nix
+    ./dev
   ];
 }
