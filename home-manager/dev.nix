@@ -17,6 +17,13 @@
     lazygit = {
       enable = true;
     };
+    gh = {
+      enable = true;
+      gitCredentialHelper.enable = true;
+      settings = {
+        git_protocol = "ssh";
+      };
+    };
     keychain = {
         enable = true;
         agents = [ "ssh" ];
