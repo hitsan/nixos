@@ -1,4 +1,4 @@
-{ config, pkgs, lib, user, ... }:
+{ user, ... }:
 {
   networking = {
     networkmanager.enable = true;

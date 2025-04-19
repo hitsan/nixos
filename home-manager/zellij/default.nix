@@ -1,4 +1,4 @@
-{ config, pkgs, shell, home_path, ... }:
+{ pkgs, shell, home_path, ... }:
 {
   home.packages = [
     pkgs.zellij
@@ -14,13 +14,13 @@
     };
   };
 
-  # home.file.".config/zellij/config.kdl".source = ./config.kdl;
   programs.${shell} = {
     shellAliases = {
       zel = "zellij";
       zls = "zellij ls";
       zka = "zellij ka -y";
       zda = "zellij da -y";
+      zsf = "zellij -l strider";
     };
     initExtra = ''
       function precmd() {
@@ -35,5 +35,5 @@
       }
     '';
   };
-  home.file.".config/zellij/config.kdl".source = home_path + "/zellij/config.kdl";
+  home.file.".config/zellij/config.kdl".source = "${home_path}/zellij/config.kdl";
 }

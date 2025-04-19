@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
+{ shell, ... }:
 {
-  programs.zsh = {
+  programs.${shell} = {
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
@@ -17,9 +17,5 @@
     '';
 
     dotDir = ".config/zsh";
-  };
-  programs = {
-    fzf.enable = true;
-    zoxide.enable = true;
   };
 }
