@@ -1,4 +1,4 @@
-{ shell, home_path, ... }:
+{ shell, ... }:
 {
   programs.neovim = {
     enable = true;
