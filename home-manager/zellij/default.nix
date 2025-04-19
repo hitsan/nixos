@@ -20,6 +20,7 @@
       zls = "zellij ls";
       zka = "zellij ka -y";
       zda = "zellij da -y";
+      zsf = "zellij -l strider";
     };
     initExtra = ''
       function precmd() {
