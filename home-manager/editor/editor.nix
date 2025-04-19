@@ -1,6 +1,9 @@
 { shell, home_path, ... }:
 let
   nvim_root = ./nvim;
+  nvim_config = ".config/nvim";
+  lua_config = "${nvim_config}/lua";
+  plugins_config = "${lua_config}/plugins";
 in
 {
   programs.neovim = {
@@ -10,10 +13,10 @@ in
     v = "nvim";
   };
   home.file = {
-    ".config/nvim/init.lua".source = "${nvim_root}/init.lua";
-    ".config/nvim/lua/base.lua".source = "${nvim_root}/lua/base.lua";
-    ".config/nvim/lua/plugins/init.lua".source = "${nvim_root}/lua/plugins/init.lua";
-    ".config/nvim/lua/plugins/gitsigns.lua".source = "${nvim_root}/lua/plugins/gitsigns.lua";
+    "${nvim_config}/init.lua".source = "${nvim_root}/init.lua";
+    "${lua_config}/base.lua".source = "${nvim_root}/lua/base.lua";
+    "${plugins_config}/init.lua".source = "${nvim_root}/lua/plugins/init.lua";
+    "${plugins_config}/gitsigns.lua".source = "${nvim_root}/lua/plugins/gitsigns.lua";
   };
 }
 
