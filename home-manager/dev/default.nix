@@ -12,4 +12,7 @@
         keys = [ "id_ed25519" ];
     };
   };
+  programs.${shell}.shellAliases = {
+    l = "eza";
+  };
 }
