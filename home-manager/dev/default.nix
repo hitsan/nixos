@@ -12,7 +12,4 @@
         keys = [ "id_ed25519" ];
     };
   };
-  imports = [
-    ./git.nix
-  ];
 }

@@ -20,6 +20,7 @@
     ./shell.nix
     ./zellij
     ./editor/editor.nix
+    ./git.nix
     ./dev
   ];
 }
