@@ -16,6 +16,10 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs = {
+    fzf.enable = true;
+    zoxide.enable = true;
+  };
   imports = [
     ./shell.nix
     ./zellij
