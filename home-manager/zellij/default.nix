@@ -1,4 +1,4 @@
-{ config, pkgs, shell, home_path, ... }:
+{ pkgs, shell, home_path, ... }:
 {
   home.packages = [
     pkgs.zellij
@@ -14,7 +14,6 @@
     };
   };
 
-  # home.file.".config/zellij/config.kdl".source = ./config.kdl;
   programs.${shell} = {
     shellAliases = {
       zel = "zellij";
@@ -35,5 +34,5 @@
       }
     '';
   };
-  home.file.".config/zellij/config.kdl".source = home_path + "/zellij/config.kdl";
+  home.file.".config/zellij/config.kdl".source = "${home_path}/zellij/config.kdl";
 }

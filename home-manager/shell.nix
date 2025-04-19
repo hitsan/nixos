@@ -1,4 +1,4 @@
-{ config, pkgs, shell, ... }:
+{ shell, ... }:
 {
   programs.${shell} = {
     enable = true;

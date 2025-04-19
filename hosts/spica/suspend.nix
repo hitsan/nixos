@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   services.logind.extraConfig = ''
     IdleAction=ignore
