@@ -6,7 +6,6 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ll = "ls -l";
       switch = "sudo nixos-rebuild switch --flake ~/dotfiles#spica";
       home = "home-manager switch --flake ~/dotfiles#hitsan";
       hflake = "home-manager --flake ~/dotfiles=hitsan";
