@@ -28,7 +28,7 @@
         local host=$(hostname)
         local title=" @$host"
         if [[ -n "$branch" ]]; then
-          title+=" [ $branch]"
+          title+=" [$branch]"
         fi
         title+=" %~"
         print -Pn "\e]2;$title\a"

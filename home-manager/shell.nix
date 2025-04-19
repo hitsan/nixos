@@ -11,6 +11,7 @@
       home = "home-manager switch --flake ~/dotfiles#hitsan";
       hflake = "home-manager --flake ~/dotfiles=hitsan";
       stop = "sudo systemctl suspend";
+      l = "eza";
     };
     initExtra = ''
       PS1='%F{green}$%f '

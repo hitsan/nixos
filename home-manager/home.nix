@@ -18,8 +18,9 @@
   programs.home-manager.enable = true;
   imports = [
     ./shell.nix
-    ./zellij/zellij.nix
+    ./zellij
     ./editor/editor.nix
+    ./git.nix
     ./dev
   ];
 }
