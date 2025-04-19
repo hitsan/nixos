@@ -24,6 +24,7 @@
         git_protocol = "ssh";
       };
     };
+    gh-dash.enable = true;
     keychain = {
         enable = true;
         agents = [ "ssh" ];
@@ -32,5 +33,6 @@
   };
   programs.${shell}.shellAliases = {
     laz = "lazygit";
+    dash = "gh dash";
   };
 }
