@@ -26,11 +26,11 @@
       function precmd() {
         local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
         local host=$(hostname)
-        local title=" @$host"
+        local title="$host"
         if [[ -n "$branch" ]]; then
-          title+=" [$branch]"
+          title+="[$branch]"
         fi
-        title+=" %~"
+        title+=":%~"
         print -Pn "\e]2;$title\a"
       }
     '';
