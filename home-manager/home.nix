@@ -30,7 +30,7 @@
     ./shell.nix
     ./zellij
     ./editor/editor.nix
-    ./git.nix
+    ./git
     ./dev
   ];
 }
