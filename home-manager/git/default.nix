@@ -12,17 +12,12 @@
     lazygit = {
       enable = true;
     };
-    gh = {
-      enable = true;
-      gitCredentialHelper.enable = true;
-      settings = {
-        git_protocol = "ssh";
-      };
-    };
-    gh-dash.enable = true;
   };
   programs.${shell}.shellAliases = {
     laz = "lazygit";
     dash = "gh dash";
   };
+  imports = [
+    ./gh.nix
+  ];
 }
