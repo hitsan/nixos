@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     bat
     eza
+    jq
   ];
   home.file = { };
 
