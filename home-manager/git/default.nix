@@ -9,15 +9,9 @@
         init.defaultBranch = "main";
       };
     };
-    lazygit = {
-      enable = true;
-    };
-  };
-  programs.${shell}.shellAliases = {
-    laz = "lazygit";
-    dash = "gh dash";
   };
   imports = [
     ./gh.nix
+    ./lazygit
   ];
 }
