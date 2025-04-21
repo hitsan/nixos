@@ -1,6 +1,6 @@
 customCommands:
-  - key: "P"
-    command: "gh pr create --fill"
+  - key: "R"
+    command: "gh pr create --base main --title '{{.SelectedRemoteBranch.Name}}' --fill"
     context: "remoteBranches"
     description: "Create GitHub Pull Request"
     loadingText: "Creating pull request..."
