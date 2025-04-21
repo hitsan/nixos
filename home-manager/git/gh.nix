@@ -1,4 +1,4 @@
-{ shell, user, ... }:
+{ shell, ... }:
 {
   programs = {
     gh = {
@@ -9,5 +9,8 @@
       };
     };
     gh-dash.enable = true;
+  };
+  programs.${shell}.shellAliases = {
+    dash = "gh dash";
   };
 }
