@@ -10,9 +10,6 @@
       };
     };
   };
-  programs.${shell}.shellAliases = {
-    dash = "gh dash";
-  };
   imports = [
     ./gh.nix
     ./lazygit
