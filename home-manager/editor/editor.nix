@@ -1,4 +1,4 @@
-{ shell, ... }:
+{ pkgs, shell, ... }:
 {
   programs.neovim = {
     enable = true;
@@ -10,5 +10,8 @@
     source = ./nvim;
     recursive = true;
   };
+  home.packages = [
+    pkgs.universal-ctags
+  ];
 }
 
