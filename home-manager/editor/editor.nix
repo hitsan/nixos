@@ -10,8 +10,7 @@
     source = ./nvim;
     recursive = true;
   };
-  home.packages = [
-    pkgs.universal-ctags
+  home.packages = with pkgs; [
+    rust-analyzer
   ];
 }
-
