@@ -8,7 +8,9 @@ return {
     config = function()
       local cmp = require("cmp")
       cmp.setup({
-        completion = {},
+        completion = {
+          autocomplete = false,
+        },
         performance = {
           debounce = 60,
           throttle = 30,
