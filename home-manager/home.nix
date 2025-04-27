@@ -29,7 +29,7 @@
   imports = [
     ./shell.nix
     ./zellij
-    ./editor/editor.nix
+    ./editor
     ./git
     ./dev
   ];
