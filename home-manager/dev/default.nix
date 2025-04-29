@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs = {
     direnv = {
@@ -12,4 +12,7 @@
       keys = [ "id_ed25519" ];
     };
   };
+  home.packages = with pkgs; [
+    just
+  ];
 }
