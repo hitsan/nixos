@@ -25,9 +25,11 @@
     l = "eza";
     ll = "eza -l";
     lt = "eza -T";
+    home = "home-manager switch --flake ~/dotfiles#hitsan";
+    hflake = "home-manager switch --flake ~/dotfiles#hitsan";
   };
   imports = [
-    ./shell.nix
+    ./shell
     ./zellij
     ./editor
     ./git
