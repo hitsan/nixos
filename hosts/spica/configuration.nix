@@ -130,7 +130,12 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.firefox.enable = true;
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      switch = "sudo nixos-rebuild switch --flake ~/dotfiles#spica";
+    };
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

@@ -6,7 +6,6 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      switch = "sudo nixos-rebuild switch --flake ~/dotfiles#spica";
       down = "sudo shutdown -h 0";
       stop = "sudo systemctl suspend";
     };
