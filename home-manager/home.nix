@@ -34,5 +34,6 @@
     ./editor
     ./git
     ./dev
+    ./docker
   ];
 }
