@@ -3,7 +3,7 @@
   programs = {
     lazydocker.enable = true;
     ${shell}.shellAliases = {
-      lazd = "lazydocker"
+      lazd = "lazydocker";
     };
   };
 }
