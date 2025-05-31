@@ -15,4 +15,7 @@
   home.packages = with pkgs; [
     just
   ];
+  imports = [
+    ./claude
+  ];
 }
