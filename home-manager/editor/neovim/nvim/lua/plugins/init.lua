@@ -15,4 +15,5 @@ require("lazy").setup({
   { import = "plugins.gitsigns" },
   { import = "plugins.lsp" },
   { import = "plugins.cmp" },
+  { import = "plugins.treesitter" },
 })
