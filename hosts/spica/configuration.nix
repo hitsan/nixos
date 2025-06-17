@@ -1,13 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running 'nixos-help').
-{ config, pkgs, lib, user, xremap, ... }:
+{ config, pkgs, lib, user, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      xremap.nixosModules.default
     ];
 
   # Bootloader.
@@ -66,24 +65,6 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
-  # change keymap
-  services.xremap = {
-    userName = user;
-    serviceMode = "user";
-    config = {
-      modmap = [
-        {
-          name = "Capslock to ctrl";
-          remap = {
-      	    CapsLock = "Ctrl_L";
-	        };
-         }
-      ];
-    };
-  };
-  
-	
 
   # Configure keymap in X11
   services.xserver.xkb = {
