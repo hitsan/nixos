@@ -7,9 +7,10 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    xremap.url = "github:xremap/nix-flake";
   };
 
-  outputs = { self, nixpkgs, nix-ld }:
+  outputs = { self, nixpkgs, nix-ld, xremap }:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -23,7 +24,7 @@
       spica = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          inherit user nix-ld modules_path;
+          inherit user nix-ld modules_path xremap;
         };
 
         modules = [ ./hosts/spica ];
