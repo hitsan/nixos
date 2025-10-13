@@ -4,7 +4,8 @@
     ./configuration.nix
     ./networking.nix
     ./suspend.nix
-    modules_path
+    "${modules_path}/docker.nix"
+    "${modules_path}/nix-ld.nix"
   ];
 }
 
