@@ -18,6 +18,13 @@
     root = builtins.toString ./.;
     modules_path = "${root}/modules";
     shell = "zsh";
+    
+    # 共通エイリアスの定義
+    commonAliases = hostname: {
+      ll = "ls -la";
+      grep = "grep --color=auto";
+      "switch ${hostname}" = "sudo nixos-rebuild switch --flake ~/nixos#${hostname}";
+    };
   in
   {
     nixosConfigurations = {
@@ -25,6 +32,7 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit user nix-ld modules_path xremap;
+          shellAliases = commonAliases "spica";
         };
 
         modules = [ ./hosts/spica ];
@@ -33,6 +41,7 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit user nix-ld modules_path xremap;
+          shellAliases = commonAliases "vaga";
         };
 
         modules = [ ./hosts/vaga ];

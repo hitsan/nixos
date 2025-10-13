@@ -1,4 +1,4 @@
-{ modules_path, ... }:
+{ modules_path, shellAliases, ... }:
 {
   imports = [
     ./configuration.nix
