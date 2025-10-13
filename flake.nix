@@ -19,7 +19,6 @@
     modules_path = "${root}/modules";
     shell = "zsh";
     
-    # 共通エイリアスの定義
     commonAliases = hostname: {
       ll = "ls -la";
       grep = "grep --color=auto";
