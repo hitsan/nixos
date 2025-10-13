@@ -29,6 +29,14 @@
 
         modules = [ ./hosts/spica ];
       };
+      vaga = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit user nix-ld modules_path xremap;
+        };
+
+        modules = [ ./hosts/vaga ];
+      };
     };
   };
 }
