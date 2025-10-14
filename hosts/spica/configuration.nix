@@ -13,6 +13,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   networking.hostName = "spica"; # Define your hostname.
 
@@ -125,7 +126,6 @@
  
   # nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
 
   programs.firefox.enable = true;
   programs.zsh = {
