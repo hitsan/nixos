@@ -46,7 +46,7 @@
         };
         specialArgs = {
           inherit user nix-ld modules_path xremap;
-          shellAliases = commonAliases "vaga";
+          shellAliases = commonAliases "vega";
         };
 
         modules = [ ./hosts/vega

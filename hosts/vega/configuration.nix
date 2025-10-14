@@ -6,13 +6,10 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
       xremap.nixosModules.default
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Bootloader for SD image is handled by sd-image.nix
 
   networking.hostName = "vega"; # Define your hostname.
 
