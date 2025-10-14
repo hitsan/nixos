@@ -39,7 +39,7 @@
         modules = [ ./hosts/spica ];
       };
 
-      vaga = nixpkgs.lib.nixosSystem {
+      vega = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
           system = "aarch64-linux";
           config.allowUnfree = true;
@@ -49,7 +49,7 @@
           shellAliases = commonAliases "vaga";
         };
 
-        modules = [ ./hosts/vaga
+        modules = [ ./hosts/vega
             nixos-hardware.nixosModules.raspberry-pi-4
             "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
           ];

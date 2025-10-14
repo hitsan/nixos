@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "vaga"; # Define your hostname.
+  networking.hostName = "vega"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
