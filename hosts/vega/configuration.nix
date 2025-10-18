@@ -1,12 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running 'nixos-help').
-{ config, pkgs, lib, user, xremap, shellAliases, ... }:
+{ config, pkgs, user, shellAliases, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
-      xremap.nixosModules.default
     ];
 
   # Bootloader for SD image is handled by sd-image.nix
@@ -65,21 +64,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  services.xremap = {
-    userName = user;
-    serviceMode = "user";
-    config = {
-      modmap = [
-        {
-          name = "Capslock to ctrl";
-          remap = {
-      	    CapsLock = "Ctrl_L";
-	        };
-         }
-      ];
-    };
-  };
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "jp";
@@ -123,7 +107,6 @@
   # nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  programs.firefox.enable = true;
   programs.zsh = {
     enable = true;
     shellAliases = shellAliases;

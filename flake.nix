@@ -45,7 +45,7 @@
           config.allowUnfree = true;
         };
         specialArgs = {
-          inherit user nix-ld modules_path xremap;
+          inherit user nix-ld modules_path;
           shellAliases = commonAliases "vega";
         };
 
