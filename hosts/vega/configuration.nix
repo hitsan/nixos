@@ -9,6 +9,23 @@
     ];
 
   # Bootloader for SD image is handled by sd-image.nix
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
+  nixpkgs.overlays = [
+    (final: super: {
+      makeModulesClosure = x: super.makeModulesClosure (x // { allowMissing = true; });
+    })
+  ];
+  boot.loader.grub.enable = false;
+  boot.loader.generic-extlinux-compatible.enable = true;
+  hardware.enableRedistributableFirmware = true;
+
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "usbhid"
+    "usb_storage"
+    "vc4"
+    "bcm2835_dma"
+  ];
 
   networking.hostName = "vega"; # Define your hostname.
 
