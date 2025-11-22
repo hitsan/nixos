@@ -1,21 +1,33 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running 'nixos-help').
-{ config, pkgs, lib, user, xremap, shellAliases, ... }:
+{ config, pkgs, user, shellAliases, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      xremap.nixosModules.default
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  # Bootloader for SD image is handled by sd-image.nix
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
+  nixpkgs.overlays = [
+    (final: super: {
+      makeModulesClosure = x: super.makeModulesClosure (x // { allowMissing = true; });
+    })
+  ];
+  boot.loader.grub.enable = false;
+  boot.loader.generic-extlinux-compatible.enable = true;
+  hardware.enableRedistributableFirmware = true;
 
-  networking.hostName = "spica"; # Define your hostname.
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "usbhid"
+    "usb_storage"
+    "vc4"
+    "bcm2835_dma"
+  ];
+
+  networking.hostName = "vega"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
@@ -55,9 +67,9 @@
     fontconfig = {
       defaultFonts = {
         serif = ["Noto Serif CJK JP" "Noto Color Emoji"];
-	sansSerif = ["Noto Sans CJK JP" "Noto Color Emoji"];
-	monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-	emoji = ["Noto Color Emoji"];
+      	sansSerif = ["Noto Sans CJK JP" "Noto Color Emoji"];
+      	monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
+      	emoji = ["Noto Color Emoji"];
       };
     };
   };
@@ -68,21 +80,6 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
-  services.xremap = {
-    userName = user;
-    serviceMode = "user";
-    config = {
-      modmap = [
-        {
-          name = "Capslock to ctrl";
-          remap = {
-      	    CapsLock = "Ctrl_L";
-	        };
-         }
-      ];
-    };
-  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -127,7 +124,6 @@
   # nix settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  programs.firefox.enable = true;
   programs.zsh = {
     enable = true;
     shellAliases = shellAliases;
@@ -137,7 +133,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    google-chrome
     ethtool
   ];
 

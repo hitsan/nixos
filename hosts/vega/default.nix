@@ -1,10 +1,10 @@
-{ modules_path, shellAliases, ... }:
+{ modules_path, ... }:
 {
   imports = [
     ./configuration.nix
     ./networking.nix
     ./suspend.nix
-    modules_path
+    "${modules_path}/nix-ld.nix"
   ];
 }
 
