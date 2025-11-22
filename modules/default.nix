@@ -7,5 +7,6 @@
     ./discord.nix
     ./host.nix
     ./qemu.nix
+    ./envfs.nix
   ];
 }
