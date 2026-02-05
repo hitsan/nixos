@@ -1,17 +1,17 @@
 { ... }:
 {
-  services.logind.extraConfig = ''
-    IdleAction=ignore
-    IdleActionSec=0
-    HandleLidSwitch=ignore
-    HandleLidSwitchExternalPower=ignore
-    HandleLidSwitchDocked=ignore
-    StopWhenSessionsEmpty=no
-    IdleActionIgnoreInhibited=yes
-    IdleActionIgnoreDocked=yes
-    IdleActionIgnoreOnLid=yes
-    IdleActionIgnoreOnExternalPower=yes
-  '';
+  services.logind.settings.Login = {
+    IdleAction = "ignore";
+    IdleActionSec = 0;
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchDocked = "ignore";
+    StopWhenSessionsEmpty = false;
+    IdleActionIgnoreInhibited = true;
+    IdleActionIgnoreDocked = true;
+    IdleActionIgnoreOnLid = true;
+    IdleActionIgnoreOnExternalPower = true;
+  };
   systemd.sleep.extraConfig = ''
     AllowSuspend=no
     AllowHibernation=no
