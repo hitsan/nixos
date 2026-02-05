@@ -49,7 +49,7 @@
     packages = with pkgs; [
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
     ];
     fontDir.enable = true;
     fontconfig = {
@@ -72,6 +72,7 @@
   services.xremap = {
     userName = user;
     serviceMode = "user";
+    enable = true;
     config = {
       modmap = [
         {
