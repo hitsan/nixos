@@ -73,6 +73,7 @@
     userName = user;
     serviceMode = "user";
     enable = true;
+    watch = true;
     config = {
       modmap = [
         {
@@ -117,7 +118,7 @@
   users.users.${user} = {
     isNormalUser = true;
     description = user;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input"];
     home = "/home/${user}";
     packages = with pkgs; [
     #  thunderbird
