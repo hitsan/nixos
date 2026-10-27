@@ -14,8 +14,7 @@
   outputs = { self, nixos-hardware, nixpkgs, nix-ld, xremap }:
   let
     user = "hitsan";
-    root = builtins.toString ./.;
-    modules_path = "${root}/modules";
+    modules_path = ./modules;
     shell = "zsh";
     
     commonAliases = hostname: {
