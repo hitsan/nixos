@@ -1,0 +1,21 @@
+name: build
+
+on:
+  pull_request:
+    paths:
+      - flake.nix
+      - flake.lock
+      - hosts/spica/**
+      - modules/**
+      - .github/workflows/build.yml
+
+permissions:
+  contents: read
+
+jobs:
+  spica:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: cachix/install-nix-action@v31
+      - run: nix build --no-link -L .#nixosConfigurations.spica.config.system.build.toplevel
